@@ -1,0 +1,18 @@
+---
+# Please use the template.j2 provided as the index.html
+- name: This sets up an httpd webserver
+  hosts: app
+  become: true
+  tasks:
+  - name: Install apache packages
+    yum:
+
+  - name: ensure httpd is running
+    service:
+
+  #  Use the Template module and the'Dest' parameter should be set to /var/www/html/index.html
+  - name: populate html webserver
+    template:
+
+  - name: Restart httpd
+    service:
