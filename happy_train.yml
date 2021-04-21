@@ -1,0 +1,22 @@
+---
+# Ansible playbook that uses motd.j2 as message of the day
+- name: Create motd Happy Train
+  hosts: apps
+  become: true
+  tasks:
+  - name: Install epel-release 
+    yum:
+      name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+      state: latest
+      
+  - name: Install happy train 
+    yum:
+      name: sl
+      state: latest
+      
+  - name: populate motd
+    template:
+      dest: /etc/profile.d/motd.sh
+      owner: dave
+      group: root
+      mode: '774'
