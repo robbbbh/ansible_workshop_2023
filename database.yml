@@ -1,0 +1,22 @@
+---
+- name: install mariadb database
+  hosts: db
+  become: true
+  tasks:
+  - name: install mariadb-server & python3-PyMySQL
+    yum:
+
+
+  - name: start mariadb
+    service:
+    
+
+
+  - name: mysql_root_password
+    mysql_user:
+      login_user: root
+      login_password: password
+      user: root
+      check_implicit_admin: true
+      password: password
+      host:
