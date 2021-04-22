@@ -5,6 +5,7 @@
   become: true
   tasks:
   - name: edit message of the day file
+    # https://docs.ansible.com/ansible/2.5/modules/lineinfile_module.html
     lineinfile:
       path: /etc/motd
       state: present
