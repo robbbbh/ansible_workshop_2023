@@ -1,0 +1,6 @@
+Installing Ansible -
+sudo yum install ansible
+
+Running Ansible adhoc -
+ansible web -m service -a "name=httpd state=restarted"
+ansible web -a "cat /etc/motd"
