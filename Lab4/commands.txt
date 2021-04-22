@@ -1,0 +1,3 @@
+After running the happy_train.yml Ansible playbook, run the following commands:
+1. ssh ec2-user@node1
+2. sl
