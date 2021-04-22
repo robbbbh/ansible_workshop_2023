@@ -1,0 +1,27 @@
+---
+# Please use the template.j2 provided as the index.html
+- name: This sets up an httpd webserver
+  hosts: app
+  become: true
+  tasks:
+  - name: Install apache packages
+    yum:
+      name: httpd
+      state: present
+
+  - name: ensure httpd is running
+    service:
+      name: httpd
+      state: started
+
+  #  Use the Template module and the'Dest' parameter should be set to /var/www/html/index.html
+  - name: populate html webserver
+    # https://docs.ansible.com/ansible/2.5/modules/template_module.html
+    template:
+      src: template.j2
+      dest: /var/www/html/index.html
+
+  - name: Restart httpd
+    service:
+      name: httpd
+      state: restarted
