@@ -13,10 +13,3 @@
     yum:
       name: sl
       state: latest
-      
-  - name: populate motd
-    template:
-      dest: /etc/profile.d/motd.sh
-      owner: dave
-      group: root
-      mode: '774'
