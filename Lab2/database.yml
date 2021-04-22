@@ -4,15 +4,18 @@
   become: true
   tasks:
   - name: install mariadb-server & python3-PyMySQL
+    # https://docs.ansible.com/ansible/2.3/yum_module.html
     yum:
 
 
   - name: start mariadb
+    # https://docs.ansible.com/ansible/2.5/modules/service_module.html
     service:
     
 
 
   - name: mysql_root_password
+    # https://docs.ansible.com/ansible/2.4/mysql_user_module.html
     mysql_user:
       login_user: root
       login_password: password
