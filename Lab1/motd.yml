@@ -1,1 +1,11 @@
 ---
+- name: Create message of the day
+  gather_facts: true #Not Required, but useful to be aware of
+  hosts: all
+  become: true
+  tasks:
+  - name: edit message of the day file
+    lineinfile:
+      path: /etc/motd
+      state: present
+      line: 'This is my server on {{ ansible_default_ipv4.address }}'
