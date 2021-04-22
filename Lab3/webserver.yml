@@ -12,6 +12,7 @@
 
   #  Use the Template module and the'Dest' parameter should be set to /var/www/html/index.html
   - name: populate html webserver
+    # https://docs.ansible.com/ansible/2.5/modules/template_module.html
     template:
 
   - name: Restart httpd
