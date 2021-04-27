@@ -1,0 +1,2 @@
+1. Further understand how Ansible uses modules to complete tasks.
+2. Complete a playbook to deploy a database and its prerequisites (database.yml).
