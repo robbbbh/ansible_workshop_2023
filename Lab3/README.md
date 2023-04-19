@@ -1,7 +1,5 @@
 # Lab 3 - Installing and enable a Webserver Using a Jinja2 Template
 
-Once you have completed each exercise, run the playbook using the `ansible-playbook webserver.yml` command.
-
 ## Exercise 1
 
 Use the `ansible.builtin.yum` module to install the httpd package. This will require you to install the package:

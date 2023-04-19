@@ -1,0 +1,9 @@
+[app]
+node1.lab.example.com
+node2.lab.example.com
+
+[db]
+node3.lab.example.com
+
+[web]
+node4.lab.example.com

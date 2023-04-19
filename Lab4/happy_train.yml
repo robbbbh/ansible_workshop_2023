@@ -1,14 +1,15 @@
 ---
 - name: Create motd Happy Train
-  hosts: apps
+  hosts: app
   become: true
   tasks:
-  - name: Install epel-release 
-    yum:
-      name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-      state: latest
-      
-  - name: Install happy train 
-    yum:
-      name: sl
-      state: latest
+    - name: Install epel-release
+      ansible.builtin.yum:
+        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+        state: present
+
+
+    - name: Install happy train (Steam Locomotive)
+      ansible.builtin.yum:
+        name: sl
+        state: present
