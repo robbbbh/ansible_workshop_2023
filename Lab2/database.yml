@@ -2,6 +2,8 @@
 - name: Install mariadb database
   hosts: db
   become: true
+  collections:
+    - community.mysql
   tasks:
 
     - name: Install mariadb-server & python3-PyMySQL
@@ -16,8 +18,8 @@
     - name: Set Mysql root password
       community.mysql.mysql_user:
         login_user: root
-        login_password: password
+        login_password: ""
         name: root
         check_implicit_admin: true
-        password: password
-        host:
+        password: change_me
+        host: localhost
