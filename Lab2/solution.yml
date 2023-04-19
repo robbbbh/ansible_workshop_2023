@@ -4,7 +4,6 @@
   become: true
   tasks:
     - name: Install mariadb-server & python3-PyMySQL
-      # https://docs.ansible.com/ansible/2.3/yum_module.html
       ansible.builtin.yum:
         name:
           - mariadb-server
@@ -12,19 +11,18 @@
         state: present
 
 
-    - name: Start mariadb
-      # https://docs.ansible.com/ansible/2.5/modules/service_module.html
+    - name: Start and enable the mariadb service
       ansible.builtin.service:
         name: mariadb
         state: started
+        enabled: true
 
 
     - name: Set Mysql root password
-      # https://docs.ansible.com/ansible/2.4/mysql_user_module.html
       community.mysql.mysql_user:
         login_user: root
         login_password: password
-        user: root
+        name: root
         check_implicit_admin: true
         password: password
         host: node3
