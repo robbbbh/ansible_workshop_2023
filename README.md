@@ -4,57 +4,27 @@ Welcome to the Ansible workshop for the National Software Academy. In this repos
 
 # Instructions
 
-## Lab 1 - Starting with the Basics
-### Exercise 1
-Review the `inventory` and `ansible.cfg` files.
+There are 4 Labs in this repository with instructions in each `README.md` of their respective directories. 
 
-Print the contents of the ansible.cfg.
-```bash
-cat ./ansible.cfg
-```
+## Lab 1
 
-Print the content of the ivnentory file.
-```bash
-cat ./inventory
-```
-### Exercise 2
+1. Review a simple config and inventory file.
+2. Installing Ansible
+3. Run a simple Ansible ad-hoc command.
+4. View and run your first playbook (motd.yml).
 
-Install Ansible and Verify the Installation
+## Lab 2
 
-Install Ansible with the `yum` command. Ensure you run this command with root privileges.
-```bash
-sudo yum install ansible
-```
+1. Further understand how Ansible uses modules to complete tasks.
+2. Complete a playbook to deploy a database and its prerequisites (database.yml).
 
-Verify the Installation by checking the ansible version.
-```bash
-ansible --version
-```
+## Lab 3
+1. Understand core Ansible practices including templating, ansible_facts and variables.
+2. Complete the playbook (webserver.yml) and serve an index.html on your webserver host.
+3. Curl website.
 
-### Exercise 3
-Run an Ansible ad-hoc command to print the contents of the server message of the day (motd).
-
-```bash
-ansible web -a "cat /etc/motd"
-```
-
-Run an Ansible ad-hoc command to restart the httpd service.
-
-```bash
-ansible web -m service -a "name=httpd state=restarted"
-```
-
-### Exercise 4 
-View the motd.yml playbook. Can you figure out What the playbook does?
-
-```bash
-cat ./motd.yml
-```
-
-Run the playbook using the `ansible-playbook` command and observe the output. To see a more verbose output, append `-v` as an argument to the command.
-
-```bash
-ansible-playbook motd.yml
-```
-
+## Lab 4
+1. Run the happy_train.yml playbook, identify and fix any errors.
+2. ssh onto the web box (node 1 or 2).
+3. Type 'sl' command.
 

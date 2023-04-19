@@ -1,4 +1,0 @@
-1. Installing Ansible.
-2. Review a simple config and inventory file.
-3. Run a simple Ansible ad-hoc command.
-4. View and run your first playbook (motd.yml).
