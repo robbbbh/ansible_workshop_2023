@@ -7,4 +7,5 @@
       ansible.builtin.lineinfile:
         path: /etc/motd
         state: present
+        create: true
         line: 'This is my server on {{ ansible_default_ipv4.address }}'

@@ -27,7 +27,7 @@ ansible --version
 ```
 
 ## Exercise 3
-Run an Ansible ad-hoc command to print the contents of the server message of the day (motd).
+Run an Ansible ad-hoc command to print the contents of the server message of the day (motd). If there is no message of the day currently on the server then the command will fail. We will generate a new motd in Exercise 4.
 
 ```bash
 ansible web -a "cat /etc/motd"
