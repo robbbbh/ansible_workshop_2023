@@ -17,6 +17,7 @@ There are 4 Labs in this repository with instructions in each `README.md` of the
 
 1. Further understand how Ansible uses modules to complete tasks.
 2. Complete a playbook to deploy a database and its prerequisites (database.yml).
+3. Connect to the DB
 
 ## Lab 3
 1. Understand core Ansible practices including templating, ansible_facts and variables.

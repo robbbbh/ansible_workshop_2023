@@ -3,25 +3,28 @@
 - name: This sets up an httpd webserver
   hosts: app
   become: true
+  gather_facts: true
   tasks:
-  - name: Install apache packages
-    yum:
-      name: httpd
-      state: present
+    - name: Install apache packages
+      ansible.builtin.yum:
+        name: httpd
+        state: present
 
-  - name: ensure httpd is running
-    service:
-      name: httpd
-      state: started
 
-  #  Use the Template module and the'Dest' parameter should be set to /var/www/html/index.html
-  - name: populate html webserver
-    # https://docs.ansible.com/ansible/2.5/modules/template_module.html
-    template:
-      src: template.j2
-      dest: /var/www/html/index.html
+    - name: Ensure httpd is running and enabled
+      ansible.builtin.service:
+        name: httpd
+        state: started
 
-  - name: Restart httpd
-    service:
-      name: httpd
-      state: restarted
+
+    - name: Populate html webserver
+      ansible.builtin.template:
+        src: template.j2
+        dest: /var/www/html/index.html
+        mode: "0755"
+
+
+    - name: Restart httpd
+      ansible.builtin.service:
+        name: httpd
+        state: restarted

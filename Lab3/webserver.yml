@@ -4,16 +4,17 @@
   hosts: app
   become: true
   tasks:
-  - name: Install apache packages
-    yum:
+    - name: Install apache packages
+      ansible.builtin.yum:
 
-  - name: ensure httpd is running
-    service:
 
-  #  Use the Template module and the'Dest' parameter should be set to /var/www/html/index.html
-  - name: populate html webserver
-    # https://docs.ansible.com/ansible/2.5/modules/template_module.html
-    template:
+    - name: Ensure httpd is running
+      ansible.builtin.service:
 
-  - name: Restart httpd
-    service:
+
+    - name: Populate html 
+      ansible.builtin.template:
+
+
+    - name: Restart httpd
+      ansible.builtin.service:

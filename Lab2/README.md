@@ -1,5 +1,8 @@
 # Lab 2 - Installing a Database & its Dependencies
 
+Once you have completed each exercise, run the playbook using the `ansible-playbook database.yml` command.
+
+
 ## Exercise 1
 
 Use the `ansible.builtin.yum` module to install the mariadb server and its dependencies. This will require you to install the packages:
@@ -49,3 +52,9 @@ Edit the following code snippet in `database.yml`:
     host:
 
 ```
+
+## Run Your code!
+
+Once you have completed each exercise, run the playbook using the `ansible-playbook database.yml` command. 
+
+If the playbook runs successfully, try using the `mysql` command to connect to the database. (e.g: mysql -h mydb.host -u username -p).
