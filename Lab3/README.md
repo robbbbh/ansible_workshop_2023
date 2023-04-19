@@ -31,6 +31,26 @@ Edit the following code snippet in `webserver.yml`:
 
 ## Exercise 3
 
+Use the `ansible.posix.firewalld` module to allow http and https traffic through the firewall.
+
+This collection may need to be manually installed. It can be done with:
+
+```bash
+ansible-galaxy collection install ansible.posix
+```
+
+Use the [ansible.posix.firewalld](https://docs.ansible.com/ansible/latest/collections/ansible/posix/firewalld_module.html) documentation to see the modules usage.
+
+Edit the following code snippet in `webserver.yml`:
+
+```yaml
+    - name: Open firewall for http and https traffic
+      ansible.posix.firewalld:
+        # your solution
+```
+
+## Exercise 4
+
 Use the `ansible.builtin.template` to populate the html server. We must set the file permissions to "0755" and the file destination as `/var/www/html/index.html`
 
 Use the [ansible.builtin.template](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html) documentation to see the modules usage.
@@ -43,7 +63,7 @@ Edit the following code snippet in `webserver.yml`:
     # Your solution
 ```
 
-## Exercise 4
+## Exercise 5
 
 Use the `ansible.builtin.service` module to restart the `httpd` service
 

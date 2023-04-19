@@ -34,6 +34,12 @@ Edit the following code snippet in `database.yml`:
 
 Use the `community.mysql.mysql_user` to change the root password. Mariadb server installs with default login_user of root and no password. To secure this user as part of an idempotent playbook, you must create at least two tasks: 1) change the root user’s password, without providing any login_user/login_password details, 2) drop a ~/.my.cnf file containing the new root credentials. Subsequent runs of the playbook will then succeed by reading the new credentials from the file.
 
+This collection may need to be manually installed. It can be done with:
+
+```bash
+ansible-galaxy collection install community.mysql
+```
+
 Use the [community.mysql.mysql_user](https://docs.ansible.com/ansible/latest/collections/community/mysql/mysql_user_module.html#ansible-collections-community-mysql-mysql-user-module) documentation to see the modules usage.
 
 Edit the following code snippet in `database.yml`:

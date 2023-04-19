@@ -12,6 +12,10 @@
       ansible.builtin.service:
 
 
+    - name: Open firewall for http and https traffic
+      ansible.posix.firewalld:
+
+
     - name: Populate html 
       ansible.builtin.template:
 

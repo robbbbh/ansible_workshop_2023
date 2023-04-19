@@ -1,3 +1,0 @@
-ansible-playbook Lab3/webserver.yml
-curl node1
-curl node2

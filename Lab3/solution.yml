@@ -3,6 +3,8 @@
 - name: This sets up an httpd webserver
   hosts: app
   become: true
+  collections:
+    - ansible.posix
   gather_facts: true
   tasks:
     - name: Install apache packages
@@ -15,6 +17,16 @@
       ansible.builtin.service:
         name: httpd
         state: started
+
+
+    - name: Open firewall
+      ansible.posix.firewalld:
+        service:
+          - http
+          - https
+        state: enabled
+        immediate: true
+        permanent: true
 
 
     - name: Populate html webserver
