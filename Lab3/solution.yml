@@ -21,12 +21,13 @@
 
     - name: Open firewall
       ansible.posix.firewalld:
-        service:
-          - http
-          - https
+        service: "{{ item }}"
         state: enabled
         immediate: true
         permanent: true
+      loop:
+        - http
+        - https
 
 
     - name: Populate html webserver
