@@ -19,7 +19,7 @@
         state: started
         enabled: true
 
-
+      # This may not working depending on the network
     - name: Set Mysql root password
       community.mysql.mysql_user:
         login_user: root
@@ -29,3 +29,4 @@
         check_implicit_admin: true
         password: password
         host: localhost
+      ignore_errors: true

@@ -54,10 +54,9 @@ Edit the following code snippet in `database.yml`:
 
 Once you have completed each exercise, run the playbook using the `ansible-playbook database.yml` command. 
 
-If the playbook runs successfully, try using the `mysql` command to connect to the database. (e.g: mysql -h mydb.host -u username -p).
+If the playbook runs successfully, try using the `mysql` command on the db server to connect to the database. (e.g: mysql -h mydb.host -u username -p).
 
-## Possible Errors
-
+## Possible Errors 1
 Is you get an error saying "Could not resolve module/ action 'community.mysql.mysl_user'" it means we do not have the collection installed. To install the correct collection run:
 
 ```bash
@@ -65,3 +64,6 @@ ansible-galaxy collection install community.mysql
 ```
 
 Once it's installed, try running the playbook again.
+
+## Possible Errors 2
+If you get an error saying "Can't connect to MYSQL server on localhost" then let me know and we can skip this task for now.
