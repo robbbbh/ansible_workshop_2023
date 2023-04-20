@@ -6,3 +6,7 @@ rocky-2
 
 [web]
 rocky-3
+
+[all:vars]
+ansible_ssh_user=rocky
+ansible_ssh_private_key_file=/home/rocky/cloud.key
