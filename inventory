@@ -1,9 +1,8 @@
 [app]
-servera
-serverb
+rocky-1
 
 [db]
-serverc
+rocky-2
 
 [web]
-serverd
+rocky-3
