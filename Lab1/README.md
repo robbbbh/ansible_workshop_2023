@@ -18,7 +18,7 @@ Install Ansible and Verify the Installation
 
 Install Ansible with the `yum` command. Ensure you run this command with root privileges.
 ```bash
-sudo yum install ansible
+sudo yum install ansible-core
 ```
 
 Verify the Installation by checking the ansible version.
